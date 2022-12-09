@@ -14,7 +14,12 @@ class CreateLettoriTable extends Migration
     public function up()
     {
         Schema::create('lettori', function (Blueprint $table) {
-            $table->id();
+            $table->incremental('id');
+            $table->string('nome', 100);
+            $table->string('cognome', 100);
+            $table->string('citta');
+            $table->dateTime('data_nascita');
+            $table->string('email');
             $table->timestamps();
         });
     }
