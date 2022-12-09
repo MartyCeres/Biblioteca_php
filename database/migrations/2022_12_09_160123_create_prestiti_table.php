@@ -14,7 +14,10 @@ class CreatePrestitiTable extends Migration
     public function up()
     {
         Schema::create('prestiti', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->timestamps('data');
+            $table->foreign('libro')->references('id')->on('libri');
+            $table->foreign('lettore')->references('id')->on('lettori');
             $table->timestamps();
         });
     }

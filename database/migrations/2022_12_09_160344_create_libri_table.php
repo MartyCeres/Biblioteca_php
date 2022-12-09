@@ -14,7 +14,13 @@ class CreateLibriTable extends Migration
     public function up()
     {
         Schema::create('libri', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('titolo', 100);
+            $table->foreign('autore')->references('id')->on('Autori');
+            $table->foreign('editore')->references('id')->on('editori');
+            $table->int('anno');
+            $table->string('genere', 50);
+            $table->foreign('posizione')->references('id')->on('posizioni');
             $table->timestamps();
         });
     }
