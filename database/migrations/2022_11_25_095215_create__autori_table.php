@@ -15,6 +15,8 @@ class CreateAutoriTable extends Migration
     {
         Schema::create('Autori', function (Blueprint $table) {
             $table->id();
+            $table->string('nome', 100);
+            $table->string('cognome', 100);
             $table->timestamps();
         });
     }
