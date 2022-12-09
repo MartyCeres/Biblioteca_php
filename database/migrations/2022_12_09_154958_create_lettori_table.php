@@ -17,7 +17,7 @@ class CreateLettoriTable extends Migration
             $table->incremental('id');
             $table->string('nome', 100);
             $table->string('cognome', 100);
-            $table->string('citta');
+            $table->string('citta', 50);
             $table->dateTime('data_nascita');
             $table->string('email');
             $table->timestamps();

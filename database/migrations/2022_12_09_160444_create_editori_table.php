@@ -14,7 +14,9 @@ class CreateEditoriTable extends Migration
     public function up()
     {
         Schema::create('editori', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('nome', 100);
+            $table->string('citta', 50);
             $table->timestamps();
         });
     }
