@@ -14,7 +14,7 @@ class CreateLettoriTable extends Migration
     public function up()
     {
         Schema::create('lettori', function (Blueprint $table) {
-            $table->incremental('id');
+            $table->increments('id');
             $table->string('nome', 100);
             $table->string('cognome', 100);
             $table->string('citta', 50);
