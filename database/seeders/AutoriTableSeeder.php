@@ -69,13 +69,5 @@ class AutoriTableSeeder extends Seeder
             'cognome' => 'Riordan'
         ]);
 
-        DB::table("Autori")->insert([
-
-            'nome'=> 'ciao',
-            'cognome' => 'sono'
-        ]);
-
-
-
     }
 }
