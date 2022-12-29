@@ -23,31 +23,31 @@ class EditoriTableSeeder extends Seeder
         DB::table("editori")->insert([
 
             'nome'=> 'Zanichelli',
-            'cognome' => 'Bologna'
+            'citta' => 'Bologna'
         ]);
 
         DB::table("editori")->insert([
 
             'nome'=> 'Bonpiani',
-            'cognome' => 'Milano'
+            'citta' => 'Milano'
         ]);
 
         DB::table("editori")->insert([
 
             'nome'=> 'Fazi',
-            'cognome' => 'Roma'
+            'citta' => 'Roma'
         ]);
 
         DB::table("editori")->insert([
 
             'nome'=> 'Mondadori',
-            'cognome' => 'Milano'
+            'citta' => 'Milano'
         ]);
 
         DB::table("editori")->insert([
 
             'nome'=> 'Feltrinelli',
-            'cognome' => 'Milano'
+            'citta' => 'Milano'
         ]);
 
 
