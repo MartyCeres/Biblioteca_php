@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 use DB;
+use App\Models\Autore;
+use App\Models\Editore;
+use App\Models\Posizione;
 use Illuminate\Database\Seeder;
 
 class LibroTableSeeder extends Seeder
@@ -17,11 +20,11 @@ class LibroTableSeeder extends Seeder
         DB::table("libri")->insert([
 
             'titolo'=> 'Harry Potter e la pietra filosofale',
-            'autore' => Autori::where('cognome', 'Rowling')->value('id'),
-            'editore'=> editori::where('nome', 'Salani')->value('id'),
+            'autore' => Autore::where('cognome', 'Rowling')->value('id'),
+            'editore'=> Editore::where('nome', 'Salani')->value('id'),
             'anno' => '1997',
             'genere'=> 'Fantasy',
-            'posizione' => posizioni::where('zona', 'A')->where('scaffale','3')->value('id')
+            'posizione' => Posizione::where('zona', 'A')->where('scaffale','3')->value('id')
         ]);
 
         DB::table("libri")->insert([
