@@ -19,7 +19,7 @@ class LettoriTableSeeder extends Seeder
             'nome'=> 'Laura',
             'cognome' => 'Ferrieri',
             'citta' => 'Lugo',
-            'data_nascita' => '28/10/1997',
+            'data_nascita' => '1997-10-28',
             'email' => 'laura.ferrieri@edu.unife.it'
 
         ]);
@@ -29,7 +29,7 @@ class LettoriTableSeeder extends Seeder
             'nome'=> 'Martina',
             'cognome' => 'Ceresoli',
             'citta' => 'Lugo',
-            'data_nascita' => '16/08/1997',
+            'data_nascita' => '1997-08-16',
             'email' => 'martina.ceresoli@edu.unife.it'
 
         ]);
@@ -39,7 +39,7 @@ class LettoriTableSeeder extends Seeder
             'nome'=> 'Mario',
             'cognome' => 'Rossi',
             'citta' => 'Milano',
-            'data_nascita' => '05/03/1975',
+            'data_nascita' => '1975-03-05',
             'email' => 'mariorossi@google.com'
 
         ]);
@@ -49,7 +49,7 @@ class LettoriTableSeeder extends Seeder
             'nome'=> 'Luca',
             'cognome' => 'Verdi',
             'citta' => 'Ferrara',
-            'data_nascita' => '24/09/1993',
+            'data_nascita' => '1993-09-24',
             'email' => 'lucaverdi@google.com'
 
         ]);
@@ -59,7 +59,7 @@ class LettoriTableSeeder extends Seeder
             'nome'=> 'Giulio',
             'cognome' => 'Neri',
             'citta' => 'Bologna',
-            'data_nascita' => '16/12/1989',
+            'data_nascita' => '1989-12-17',
             'email' => 'giulio.neri@google.com'
 
         ]);
