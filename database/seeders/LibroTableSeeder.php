@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Http\Controllers\EditoreController;
 use DB;
 use App\Models\Autore;
 use App\Models\Editore;
@@ -37,94 +38,94 @@ class LibroTableSeeder extends Seeder
             'posizione_id' => Posizione::where('zona', 'A')->where('scaffale','3')->value('id')
         ]);
 
-        /*DB::table("libri")->insert([
+        DB::table("libri")->insert([
 
             'titolo'=> 'Harry Potter e il prigioniero di azkaban',
-            'autore' => Autori::where('cognome', 'Rowling')->value('id'),
-            'editore'=> editori::where('nome', 'Salani')->value('id'),
+            'autore_id' => Autore::where('cognome', 'Rowling')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Salani')->value('id'),
             'anno' => '1999',
             'genere'=> 'Fantasy',
-            'posizione' => posizioni::where('zona', 'A')->where('scaffale','3')->value('id')
+            'posizione_id' => Posizione::where('zona', 'A')->where('scaffale','3')->value('id')
         ]);
 
         DB::table("libri")->insert([
 
             'titolo'=> 'Harry Potter e il calice di fuoco',
-            'autore' => Autori::where('cognome', 'Rowling')->value('id'),
-            'editore'=> editori::where('nome', 'Salani')->value('id'),
+            'autore_id' => Autore::where('cognome', 'Rowling')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Salani')->value('id'),
             'anno' => '2000',
             'genere'=> 'Fantasy',
-            'posizione' => posizioni::where('zona', 'A')->where('scaffale','3')->value('id')
+            'posizione_id' => Posizione::where('zona', 'A')->where('scaffale','3')->value('id')
         ]);
 
         DB::table("libri")->insert([
 
             'titolo'=> 'Harry Potter e l\'ordine della fenice',
-            'autore' => Autori::where('cognome', 'Rowling')->value('id'),
-            'editore'=> editori::where('nome', 'Salani')->value('id'),
+            'autore_id' => Autore::where('cognome', 'Rowling')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Salani')->value('id'),
             'anno' => '2003',
             'genere'=> 'Fantasy',
-            'posizione' => posizioni::where('zona', 'A')->where('scaffale','3')->value('id')
+            'posizione_id' => Posizione::where('zona', 'A')->where('scaffale','3')->value('id')
         ]);
 
         DB::table("libri")->insert([
 
             'titolo'=> 'Harry Potter e il principe mezzosangue',
-            'autore' => Autori::where('cognome', 'Rowling')->value('id'),
-            'editore'=> editori::where('nome', 'Salani')->value('id'),
+            'autore_id' => Autore::where('cognome', 'Rowling')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Salani')->value('id'),
             'anno' => '2005',
             'genere'=> 'Fantasy',
-            'posizione' => posizioni::where('zona', 'A')->where('scaffale','3')->value('id')
+            'posizione_id' => Posizione::where('zona', 'A')->where('scaffale','3')->value('id')
         ]);
 
         DB::table("libri")->insert([
 
             'titolo'=> 'Harry Potter e i doni della morte',
-            'autore' => Autori::where('cognome', 'Rowling')->value('id'),
-            'editore'=> editori::where('nome', 'Salani')->value('id'),
+            'autore_id' => Autore::where('cognome', 'Rowling')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Salani')->value('id'),
             'anno' => '2007',
             'genere'=> 'Fantasy',
-            'posizione' => posizioni::where('zona', 'A')->where('scaffale','3')->value('id')
+            'posizione_id' => Posizione::where('zona', 'A')->where('scaffale','3')->value('id')
         ]);
 
         DB::table("libri")->insert([
 
             'titolo'=> 'Divina Commedia',
-            'autore' => Autori::where('cognome', 'Alighieri')->value('id'),
-            'editore'=> editori::where('nome', 'Zanichelli')->value('id'),
+            'autore_id' => Autore::where('cognome', 'Alighieri')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Zanichelli')->value('id'),
             'anno' => '1975',
             'genere'=> 'Poema',
-            'posizione' => posizioni::where('zona', 'B')->where('scaffale','1')->value('id')
+            'posizione_id' => Posizione::where('zona', 'B')->where('scaffale','1')->value('id')
         ]);
 
         DB::table("libri")->insert([
 
             'titolo'=> 'La Compagnia dell\'Anello',
-            'autore' => Autori::where('cognome', 'Tolkien')->value('id'),
-            'editore'=> editori::where('nome', 'Bompiani')->value('id'),
+            'autore_id' => Autore::where('cognome', 'Tolkien')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Bompiani')->value('id'),
             'anno' => '1967',
             'genere'=> 'Fantasy',
-            'posizione' => posizioni::where('zona', 'A')->where('scaffale','4')->value('id')
+            'posizione_id' => Posizione::where('zona', 'A')->where('scaffale','4')->value('id')
         ]);
 
         DB::table("libri")->insert([
 
             'titolo'=> 'Le due torri',
-            'autore' => Autori::where('cognome', 'Tolkien')->value('id'),
-            'editore'=> editori::where('nome', 'Bompiani')->value('id'),
+            'autore_id' => Autore::where('cognome', 'Tolkien')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Bompiani')->value('id'),
             'anno' => '1970',
             'genere'=> 'Fantasy',
-            'posizione' => posizioni::where('zona', 'A')->where('scaffale','4')->value('id')
+            'posizione_id' => Posizione::where('zona', 'A')->where('scaffale','4')->value('id')
         ]);
 
         DB::table("libri")->insert([
 
             'titolo'=> 'Il ritorno del re',
-            'autore' => Autori::where('cognome', 'Tolkien')->value('id'),
-            'editore'=> editori::where('nome', 'Bompiani')->value('id'),
+            'autore_id' => Autore::where('cognome', 'Tolkien')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Bompiani')->value('id'),
             'anno' => '1970',
             'genere'=> 'Fantasy',
-            'posizione' => posizioni::where('zona', 'A')->where('scaffale','4')->value('id')
-        ]);*/
+            'posizione_id' => Posizione::where('zona', 'A')->where('scaffale','4')->value('id')
+        ]);
     }
 }
