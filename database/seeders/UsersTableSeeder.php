@@ -37,7 +37,6 @@ class UsersTableSeeder extends Seeder
             'password' => 'giulia',
             'role' => 'guest'
         ]);
-
-
+        
     }
 }

@@ -9,7 +9,7 @@ class Prestito extends Model
 {
     use HasFactory;
 
-    protected $table = 'posizioni';
+    protected $table = 'prestiti';
 
     protected $fillable = [
         'libro_id',

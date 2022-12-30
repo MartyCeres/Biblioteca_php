@@ -28,7 +28,7 @@ class EditoriTableSeeder extends Seeder
 
         DB::table("editori")->insert([
 
-            'nome'=> 'Bonpiani',
+            'nome'=> 'Bompiani',
             'citta' => 'Milano'
         ]);
 
