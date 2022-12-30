@@ -18,5 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(LettoriTableSeeder::class);
         $this->call(PosizioniTableSeeder::class);
         $this->call(LibroTableSeeder::class);
+        $this->call(PrestitiTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
     }
 }

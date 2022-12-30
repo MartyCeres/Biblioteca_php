@@ -19,19 +19,19 @@ class PrestitiTableSeeder extends Seeder
         DB::table("prestiti")->insert([
 
             'libro_id' => Libro::where('titolo', 'Harry Potter e il calice di fuoco')->value('id'),
-            'lettore_id'=> Lettore::where('cognome', 'Verdi')->value('id'),
+            'lettore_id'=> Lettore::where('cognome', 'Verdi')->value('id')
         ]);
 
         DB::table("prestiti")->insert([
 
             'libro_id' => Libro::where('titolo', 'Divina Commedia')->value('id'),
-            'lettore_id'=> Lettore::where('cognome', 'Rossi')->value('id'),
+            'lettore_id'=> Lettore::where('cognome', 'Rossi')->value('id')
         ]);
 
         DB::table("prestiti")->insert([
 
             'libro_id' => Libro::where('titolo', 'Le due torri')->value('id'),
-            'lettore_id'=> Lettore::where('cognome', 'Neri')->value('id'),
+            'lettore_id'=> Lettore::where('cognome', 'Neri')->value('id')
         ]);
 
     }
