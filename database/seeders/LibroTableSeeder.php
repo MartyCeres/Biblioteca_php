@@ -30,14 +30,14 @@ class LibroTableSeeder extends Seeder
         DB::table("libri")->insert([
 
             'titolo'=> 'Harry Potter e la camera dei segreti',
-            'autore' => Autori::where('cognome', 'Rowling')->value('id'),
-            'editore'=> editori::where('nome', 'Salani')->value('id'),
+            'autore_id' => Autore::where('cognome', 'Rowling')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Salani')->value('id'),
             'anno' => '1998',
             'genere'=> 'Fantasy',
-            'posizione' => posizioni::where('zona', 'A')->where('scaffale','3')->value('id')
+            'posizione_id' => Posizione::where('zona', 'A')->where('scaffale','3')->value('id')
         ]);
 
-        DB::table("libri")->insert([
+        /*DB::table("libri")->insert([
 
             'titolo'=> 'Harry Potter e il prigioniero di azkaban',
             'autore' => Autori::where('cognome', 'Rowling')->value('id'),
@@ -125,6 +125,6 @@ class LibroTableSeeder extends Seeder
             'anno' => '1970',
             'genere'=> 'Fantasy',
             'posizione' => posizioni::where('zona', 'A')->where('scaffale','4')->value('id')
-        ]);
+        ]);*/
     }
 }
