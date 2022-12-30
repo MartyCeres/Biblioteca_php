@@ -238,6 +238,155 @@ class LibroTableSeeder extends Seeder
             'posizione_id' => Posizione::where('zona', 'A')->where('scaffale','2')->value('id')
         ]);
 
+        DB::table("libri")->insert([
+
+            'titolo'=> 'Le pagine della nostra vita',
+            'autore_id' => Autore::where('cognome', 'Sparks')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Mondadori')->value('id'),
+            'anno' => '1996',
+            'genere'=> 'Romantico',
+            'posizione_id' => Posizione::where('zona', 'C')->where('scaffale','1')->value('id')
+        ]);
+
+        DB::table("libri")->insert([
+
+            'titolo'=> 'Le parole che non ti ho detto',
+            'autore_id' => Autore::where('cognome', 'Sparks')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Mondadori')->value('id'),
+            'anno' => '1998',
+            'genere'=> 'Romantico',
+            'posizione_id' => Posizione::where('zona', 'C')->where('scaffale','1')->value('id')
+        ]);
+
+        DB::table("libri")->insert([
+
+            'titolo'=> 'I passi dell\'amore ',
+            'autore_id' => Autore::where('cognome', 'Sparks')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Mondadori')->value('id'),
+            'anno' => '1999',
+            'genere'=> 'Romantico',
+            'posizione_id' => Posizione::where('zona', 'C')->where('scaffale','1')->value('id')
+        ]);
+
+        DB::table("libri")->insert([
+
+            'titolo'=> 'Un cuore in silenzio',
+            'autore_id' => Autore::where('cognome', 'Sparks')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Mondadori')->value('id'),
+            'anno' => '2000',
+            'genere'=> 'Romantico',
+            'posizione_id' => Posizione::where('zona', 'C')->where('scaffale','1')->value('id')
+        ]);
+
+        DB::table("libri")->insert([
+
+            'titolo'=> 'Un segreto nel cuore ',
+            'autore_id' => Autore::where('cognome', 'Sparks')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Mondadori')->value('id'),
+            'anno' => '2001',
+            'genere'=> 'Romantico',
+            'posizione_id' => Posizione::where('zona', 'C')->where('scaffale','1')->value('id')
+        ]);
+
+        DB::table("libri")->insert([
+
+            'titolo'=> 'Il nome della rosa',
+            'autore_id' => Autore::where('cognome', 'Eco')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Bompiani')->value('id'),
+            'anno' => '1980',
+            'genere'=> 'Poema',
+            'posizione_id' => Posizione::where('zona', 'B')->where('scaffale','2')->value('id')
+        ]);
+
+        DB::table("libri")->insert([
+
+            'titolo'=> 'Il pendolo di Foucault',
+            'autore_id' => Autore::where('cognome', 'Eco')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Bompiani')->value('id'),
+            'anno' => '1988',
+            'genere'=> 'Poema',
+            'posizione_id' => Posizione::where('zona', 'B')->where('scaffale','2')->value('id')
+        ]);
+
+        DB::table("libri")->insert([
+
+            'titolo'=> 'Hunger Games',
+            'autore_id' => Autore::where('cognome', 'Collins')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Mondadori')->value('id'),
+            'anno' => '2008',
+            'genere'=> 'Fantasy',
+            'posizione_id' => Posizione::where('zona', 'A')->where('scaffale','1')->value('id')
+        ]);
+
+        DB::table("libri")->insert([
+
+            'titolo'=> 'La ragazza di fuoco',
+            'autore_id' => Autore::where('cognome', 'Collins')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Mondadori')->value('id'),
+            'anno' => '2009',
+            'genere'=> 'Fantasy',
+            'posizione_id' => Posizione::where('zona', 'A')->where('scaffale','1')->value('id')
+        ]);
+
+        DB::table("libri")->insert([
+
+            'titolo'=> 'Il canto della rivolta',
+            'autore_id' => Autore::where('cognome', 'Collins')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Mondadori')->value('id'),
+            'anno' => '2010',
+            'genere'=> 'Fantasy',
+            'posizione_id' => Posizione::where('zona', 'A')->where('scaffale','1')->value('id')
+        ]);
+
+        DB::table("libri")->insert([
+
+            'titolo'=> 'Il ladro di fulmini',
+            'autore_id' => Autore::where('cognome', 'Riordan')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Mondadori')->value('id'),
+            'anno' => '2005',
+            'genere'=> 'Fantasy',
+            'posizione_id' => Posizione::where('zona', 'A')->where('scaffale','3')->value('id')
+        ]);
+
+        DB::table("libri")->insert([
+
+            'titolo'=> 'Il Mare dei Mostri',
+            'autore_id' => Autore::where('cognome', 'Riordan')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Mondadori')->value('id'),
+            'anno' => '2006',
+            'genere'=> 'Fantasy',
+            'posizione_id' => Posizione::where('zona', 'A')->where('scaffale','3')->value('id')
+        ]);
+
+        DB::table("libri")->insert([
+
+            'titolo'=> 'La maledizione del Titano',
+            'autore_id' => Autore::where('cognome', 'Riordan')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Mondadori')->value('id'),
+            'anno' => '2007',
+            'genere'=> 'Fantasy',
+            'posizione_id' => Posizione::where('zona', 'A')->where('scaffale','3')->value('id')
+        ]);
+
+        DB::table("libri")->insert([
+
+            'titolo'=> 'La battaglia del labirinto',
+            'autore_id' => Autore::where('cognome', 'Riordan')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Mondadori')->value('id'),
+            'anno' => '2008',
+            'genere'=> 'Fantasy',
+            'posizione_id' => Posizione::where('zona', 'A')->where('scaffale','3')->value('id')
+        ]);
+
+        DB::table("libri")->insert([
+
+            'titolo'=> 'Lo scontro finale',
+            'autore_id' => Autore::where('cognome', 'Riordan')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Mondadori')->value('id'),
+            'anno' => '2009',
+            'genere'=> 'Fantasy',
+            'posizione_id' => Posizione::where('zona', 'A')->where('scaffale','3')->value('id')
+        ]);
 
     }
 }
