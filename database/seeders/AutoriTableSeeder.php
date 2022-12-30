@@ -14,7 +14,6 @@ class AutoriTableSeeder extends Seeder
      */
     public function run()
     {
-        //
         DB::table("Autori")->insert([
 
             'nome'=> 'J. K.',
