@@ -20,11 +20,11 @@ class LibroTableSeeder extends Seeder
         DB::table("libri")->insert([
 
             'titolo'=> 'Harry Potter e la pietra filosofale',
-            'autore' => Autore::where('cognome', 'Rowling')->value('id'),
-            'editore'=> Editore::where('nome', 'Salani')->value('id'),
+            'autore_id' => Autore::where('cognome', 'Rowling')->value('id'),
+            'editore_id'=> Editore::where('nome', 'Salani')->value('id'),
             'anno' => '1997',
             'genere'=> 'Fantasy',
-            'posizione' => Posizione::where('zona', 'A')->where('scaffale','3')->value('id')
+            'posizione_id' => Posizione::where('zona', 'A')->where('scaffale','3')->value('id')
         ]);
 
         DB::table("libri")->insert([
