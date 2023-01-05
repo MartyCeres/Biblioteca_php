@@ -30,12 +30,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href='#'> Prestiti</a>
                     </li>
-                </ul>
+                    </ul>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="nav-item"><a class="nav-link" href="#">
                         <span class="glyphicon glyphicon-log-in"></span> Login </a></li>
-                    </ul>
+                </ul>
             </div>
         </nav>
         <!--end navbar-->
