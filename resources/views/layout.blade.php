@@ -9,7 +9,6 @@
 
 </head>
 <body>
-    <header>
     <div class="p-3 bg-success text-white text-center">
         <h1>Biblioteca</h1>
     </div>
@@ -19,7 +18,7 @@
                 <div class="navbar-header">
                     <ul class="nav navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href='#'>Home</a>
+                        <a class="nav-link active" href="#">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href='#'> Libri</a>
@@ -39,7 +38,9 @@
             </div>
         </nav>
         <!--end navbar-->
-    </header>
 
+        <div class="container">
+            @yield('content')
+         </div>
 </body>
 </html>
