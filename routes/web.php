@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PageController;
+use App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,12 +18,8 @@ use App\Http\Controllers\PageController;
     return view('welcome');
 }); */
 
-Route::get('/', function(){
+/*Route::get('/', function(){
     return view('/pages/home');
-}); 
+});*/
 
-/*Route::get('/', [
-    'uses'=>'PageController@getHomePage',
-    'as' => 'home'
-]); */
-
+Route::get('/', 'App\Http\Controllers\PageController@getHomePage')->name('home');
