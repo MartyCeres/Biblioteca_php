@@ -22,8 +22,5 @@ use App\Http\Controllers\Controller;
     return view('layout');
 }); */
 
-Route::get('/', [
-    'uses'=>'PageController@getHomePage',
-    'as' => 'home'
-]);
+Route::get('/', 'App\Http\Controllers\PageController@getHomePage')->name('home');
 

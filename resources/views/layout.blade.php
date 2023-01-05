@@ -18,11 +18,7 @@
                 <div class="navbar-header">
                     <ul class="nav navbar-nav">
                     <li class="nav-item">
-<<<<<<< HEAD
                         <a class="nav-link active" href="{{route('home')}}">Home</a>
-=======
-                        <a class="nav-link active" href="{{ route('home')}}">Home</a>
->>>>>>> e4661d7729f1b9cc66573b9ce0a7717f429715fb
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href='#'> Libri</a>
