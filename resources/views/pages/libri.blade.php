@@ -13,6 +13,6 @@
         <img src="/images/libri1.jpg" class="rounded float-end" width="300">
     </div>
     </div>
-  </div>
+</div>
 
 @endsection
