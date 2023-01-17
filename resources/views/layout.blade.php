@@ -27,7 +27,7 @@
                         <a class="nav-link" href="{{route('lettori')}}"> Lettori</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href='#'> Prestiti</a>
+                        <a class="nav-link" href="{{route('prestiti')}}"> Prestiti</a>
                     </li>
                     </ul>
                 </div>

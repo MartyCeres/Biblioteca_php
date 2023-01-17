@@ -27,3 +27,5 @@ Route::get('/', 'App\Http\Controllers\PageController@getHomePage')->name('home')
 Route::get('/libri', 'App\Http\Controllers\PageController@getLibriPage')->name('libri');
 
 Route::get('/lettori', 'App\Http\Controllers\PageController@getLettoriPage')->name('lettori');
+
+Route::get('/prestiti', 'App\Http\Controllers\PageController@getPrestitiPage')->name('prestiti');
