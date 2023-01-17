@@ -24,7 +24,7 @@
                         <a class="nav-link" href="{{route('libri')}}"> Libri</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href='#'> Lettori</a>
+                        <a class="nav-link" href="{{route('lettori')}}"> Lettori</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href='#'> Prestiti</a>

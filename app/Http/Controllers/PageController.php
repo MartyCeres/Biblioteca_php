@@ -13,4 +13,10 @@ class PageController extends Controller
     public function getLibriPage() {
         return view('/pages/libri');
     }
+    public function getLettoriPage() {
+        return view('/pages/lettori');
+    }
+    public function getPrestitiPage() {
+        return view('/pages/prestiti');
+    }
 }
