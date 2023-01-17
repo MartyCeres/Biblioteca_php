@@ -4,7 +4,18 @@
 <header>
 
 </header>
-<div class="container">
-    <h1> Titolo Prestiti </h1>
+<br>
+<div class="container row">
+    <div class="col-sm-6 text-dark">
+        <h1>Titolo Prestiti</h1>
+        <form class="d-flex">
+            <input class="form-control me-2" type="text" placeholder="Cerca">
+            <button class="btn btn-success" type="button">Cerca</button>
+        </form>
+    </div>
+    <div class="col-sm-6">
+        <img src="/images/prestiti1.jpg" class="rounded float-end" width="300">
+    </div>
+    </div>
 </div>
 @endsection
