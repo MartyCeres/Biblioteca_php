@@ -21,7 +21,7 @@
                         <a class="nav-link active" href="{{route('home')}}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href='#'> Libri</a>
+                        <a class="nav-link" href="{{route('libri')}}"> Libri</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href='#'> Lettori</a>

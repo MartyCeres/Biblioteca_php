@@ -9,4 +9,8 @@ class PageController extends Controller
     public function getHomePage() {
         return view('/pages/home');
     }
+
+    public function getLibriPage() {
+        return view('/pages/libri');
+    }
 }
