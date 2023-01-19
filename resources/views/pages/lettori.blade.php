@@ -21,8 +21,9 @@
 </div>
 
 <div class="table-wrapper-scroll-y my-custom-scrollbar-total">
+    <br>
         <table id="roleTab" class="table table-hover table-responsive-md text-center">
-            <thead>
+            <thead class="table-success">
                 <tr>
                     <th scope="col">Nome</th>
                     <th scope="col">Cognome</th>
