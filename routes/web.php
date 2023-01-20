@@ -29,5 +29,3 @@ Route::get('/libri', 'App\Http\Controllers\PageController@getLibriPage')->name('
 Route::get('/lettori', 'App\Http\Controllers\PageController@getLettoriPage')->name('lettori');
 
 Route::get('/prestiti', 'App\Http\Controllers\PageController@getPrestitiPage')->name('prestiti');
-
-Route::post('/lettori', 'App\Http\Controllers\PageController@getLettoriPage')->name('lettoriPage');
