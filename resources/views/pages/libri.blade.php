@@ -7,16 +7,38 @@
 <br>
 <div class="container row">
     <div class="col-sm-6 text-dark">
-        <h1>Titolo Libri</h1>
-        <form class="d-flex">
-            <input class="form-control me-2" type="text" placeholder="Cerca">
-            <button class="btn btn-success" type="button">Cerca</button>
-        </form>
+        <br>
+        <h1>Catalogo Libri</h1>
     </div>
     <div class="col-sm-6">
-        <img src="/images/libri1.jpg" class="rounded float-end" width="300">
+        <img src="/images/libri1.jpg" class="rounded float-end" width="300" height="200">
     </div>
     </div>
 </div>
 
+<div class="table-wrapper-scroll-y my-custom-scrollbar-total">
+    <br>
+        <table id="roleTab" class="table table-hover table-responsive-md text-center">
+            <thead class="table-success">
+                <tr>
+                    <th scope="col">Titolo</th>
+                    <th scope="col">Autore</th>
+                    <th scope="col">Editore</th>
+                    <th scope="col">Anno</th>
+                    <th scope="col">Genere</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($libri as $libro)
+                    <tr>
+                        <td>{{  $libro->titolo  }}</td>
+                        <td>{{  $libro->cognome  }}</td>
+                        <td>{{  $libro->nome  }}</td>
+                        <td>{{  $libro->anno  }}</td>
+                        <td>{{  $libro->genere  }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 @endsection
