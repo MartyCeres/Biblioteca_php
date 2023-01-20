@@ -9,9 +9,9 @@
     <div class="col-sm-6 text-dark">
         <br>
         <h1>Lettori Registrati</h1>
-        <form class="d-flex">
-            <input class="form-control me-2" type="text" placeholder="Cerca">
-            <button class="btn btn-success" type="button">Cerca</button>
+        <form class="d-flex" action="{{ route('search') }}" method="GET">
+            <input class="form-control me-2" type="text" placeholder="Cerca" name="search" required/>
+            <button class="btn btn-success" type="submit">Cerca</button>
         </form>
     </div>
     <div class="col-sm-6">

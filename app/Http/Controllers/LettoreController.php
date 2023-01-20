@@ -10,6 +10,6 @@ class LettoreController extends Controller
     /*public function postLettori(){
         $lettori = Lettore::all();
         return View::make('lettore', ['nome' => '$nome']);
-    } */
-
+    } */  
 }
+
