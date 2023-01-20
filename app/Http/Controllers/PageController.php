@@ -12,12 +12,11 @@ class PageController extends Controller
     }
 
     public function getLibriPage() {
-        
+
         return view('/pages/libri');
     }
     public function getLettoriPage() {
         $lettori = Lettore::all();
-
         return view('/pages/lettori', compact('lettori'));
     }
     public function getPrestitiPage() {
