@@ -21,6 +21,7 @@
         <table id="roleTab" class="table table-hover table-responsive-md text-center">
             <thead class="table-success">
                 <tr>
+                    <th scope="col">N°</th>
                     <th scope="col">Titolo libro</th>
                     <th scope="col">Nome Lettore</th>
                     <th scope="col">Cognome Lettore</th>
@@ -29,6 +30,7 @@
             <tbody>
                 @foreach ($prestiti as $prestito)
                     <tr>
+                        <td>{{  $prestito->id  }}</td>
                         <td>{{  $prestito->titolo  }}</td>
                         <td>{{  $prestito->nome  }}</td>
                         <td>{{  $prestito->cognome  }}</td>
