@@ -29,3 +29,7 @@ Route::get('/libri', 'App\Http\Controllers\PageController@getLibriPage')->name('
 Route::get('/lettori', 'App\Http\Controllers\PageController@getLettoriPage')->name('lettori');
 
 Route::get('/prestiti', 'App\Http\Controllers\PageController@getPrestitiPage')->name('prestiti');
+
+Route::post('/signin', 'App\Http\Controllers\UserController@post_Login')->name('login');
+
+Route::post('/logout', 'App\Http\Controllers\UserController@post_Logout')->name('logout');

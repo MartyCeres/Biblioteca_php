@@ -19,7 +19,7 @@ class PageController extends Controller
         $libri = DB::table('libri')
             ->join('Autori', 'Autori.id', '=', 'libri.autore_id')
             ->join('editori', 'editori.id', '=', 'libri.editore_id')
-            ->select('libri.*', 'Autori.nome', 'Autori.cognome', 'editori.nome')
+            ->select('libri.*', 'Autori.nome as anome', 'Autori.cognome', 'editori.nome')
             ->get();
         return view('/pages/libri', compact('libri'));
     }

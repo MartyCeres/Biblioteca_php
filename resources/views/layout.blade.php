@@ -31,9 +31,34 @@
                     </li>
                     </ul>
                 </div>
+
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item"><a class="nav-link" href="#">
-                        <span class="glyphicon glyphicon-log-in"></span> Login </a></li>
+                @if(Auth::check())
+
+                <li class="nav-item dropdown text-light">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Benvenuto {{ Auth::user()->name }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Profilo</a>
+                        @if(Auth::user()->role('admin'))
+                        <a class="dropdown-item" href="#">Gestione Prestiti</a>
+                        @endif
+                        <a class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
+                    </div>
+                </li> 
+                @endif
+                @if(old('error'))
+                <b class="text-danger">Errore di autenticazione!</b>
+                @endif
+
+                @if(!Auth::check())
+                <li><a>
+                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#login"> Login </button>
+                </a></li>
+                @endif
+                
                 </ul>
             </div>
         </nav>
@@ -42,5 +67,43 @@
         <div class="container">
             @yield('content')
          </div>
+
+         <!-- The Modal -->
+        <div class="modal fade" id="login">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Area riservata</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                
+                <div class="container mt-3">
+                <h2>Log-in</h2>
+                <form class="form-signin" method="POST" autocomplete="off" action="{{ route('login') }}">
+                @csrf
+                    <div class="mb-3 mt-3">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Inserisci email" name="email">
+                    </div>
+                    <div class="mb-3">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="Inserisci password" name="pswd">
+                    </div>
+                    <button type="submit" class="btn btn-success">Accedi</button>
+                </form>
+                </div>
+
+            </div>
+
+            </div>
+        </div>
+        </div>
+
+
 </body>
 </html>

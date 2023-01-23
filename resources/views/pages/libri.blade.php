@@ -22,7 +22,8 @@
             <thead class="table-success">
                 <tr>
                     <th scope="col">Titolo</th>
-                    <th scope="col">Autore</th>
+                    <th scope="col"> Nome Autore</th>
+                    <th scope="col"> Cognome Autore</th>
                     <th scope="col">Editore</th>
                     <th scope="col">Anno</th>
                     <th scope="col">Genere</th>
@@ -32,6 +33,7 @@
                 @foreach ($libri as $libro)
                     <tr>
                         <td>{{  $libro->titolo  }}</td>
+                        <td>{{  $libro->anome  }}</td>
                         <td>{{  $libro->cognome  }}</td>
                         <td>{{  $libro->nome  }}</td>
                         <td>{{  $libro->anno  }}</td>
