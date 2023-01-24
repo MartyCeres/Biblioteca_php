@@ -33,31 +33,34 @@
                 </div>
 
                 <ul class="nav navbar-nav navbar-right">
-                @if(Auth::check())
 
+                @if(Auth::check())
                 <li class="nav-item dropdown text-light">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Benvenuto {{ Auth::user()->name }}
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Profilo</a>
-                        @if(Auth::user()->role('admin'))
-                        <a class="dropdown-item" href="#">Gestione Prestiti</a>
+                        @if(Auth::user()->hasRole('admin'))
+                            <a class="dropdown-item" href="#">Gestione Prestiti</a>
                         @endif
                         <a class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
-                    </div>
+                    </ul>
                 </li> 
                 @endif
                 @if(old('error'))
                 <b class="text-danger">Errore di autenticazione!</b>
-                @endif
+                @endif 
+
 
                 @if(!Auth::check())
                 <li><a>
-                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#login"> Login </button>
+                    <button type="button" class="btn btn-outline-light" id="log" data-bs-toggle="modal" data-bs-target="#login"> Login </button>
                 </a></li>
                 @endif
+
+               
                 
                 </ul>
             </div>
@@ -68,23 +71,23 @@
             @yield('content')
          </div>
 
-         <!-- The Modal -->
+         <!-- The Modal 
         <div class="modal fade" id="login">
         <div class="modal-dialog">
             <div class="modal-content">
 
-            <!-- Modal Header -->
+             Modal Header 
             <div class="modal-header">
                 <h4 class="modal-title">Area riservata</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
-            <!-- Modal body -->
+             Modal body 
             <div class="modal-body">
                 
                 <div class="container mt-3">
                 <h2>Log-in</h2>
-                <form class="form-signin" method="POST" autocomplete="off" action="{{ route('login') }}">
+                <form class="form-signin" method="POST" autocomplete="off" action="{{ route('signin') }}">
                 @csrf
                     <div class="mb-3 mt-3">
                     <label for="email">Email:</label>
@@ -92,18 +95,45 @@
                     </div>
                     <div class="mb-3">
                     <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd" placeholder="Inserisci password" name="pswd">
+                    <input type="password" class="form-control" id="pwd" placeholder="Inserisci password" name="pwd">
                     </div>
                     <button type="submit" class="btn btn-success">Accedi</button>
                 </form>
                 </div>
 
             </div>
-
             </div>
         </div>
+        </div> -->
+
+        <div class="modal" role="dialog" id="login" tabindex="-1">
+        <div class="container">
+            <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center fadeIn first">Sign In
+                        <button type="button" name="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                    </h5>
+                    <form class="form-signin" method="POST" autocomplete="off" action="{{ route('signin') }}">
+                    @csrf
+                    <div class="form-label-group fadeIn second">
+                        <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
+                        <label for="inputEmail">Email address</label>
+                    </div>
+        
+                    <div class="form-label-group fadeIn third">
+                        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+                        <label for="inputPassword">Password</label>
+                    </div>
+                    <button class="btn btn-lg btn-color btn-block text-uppercase fadeIn fourth" type="submit">Sign in</button>
+                    </form>
+                </div>
+                </div>
+            </div>
+            </div>
         </div>
-
-
 </body>
 </html>

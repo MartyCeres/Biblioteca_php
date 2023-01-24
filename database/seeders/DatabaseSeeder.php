@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(LibroTableSeeder::class);
         $this->call(PrestitiTableSeeder::class);
         $this->call(UsersTableSeeder::class);
+        $this->call(RoleTableSeeder::class);
     }
 }

@@ -1,8 +1,9 @@
 <?php
 
 namespace Database\Seeders;
+use App\Models\User;
+use App\Models\Role;
 
-use DB;
 use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
@@ -14,29 +15,37 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table("users")->insert([
 
-            'name'=> 'Laura',
-            'email' => 'laura.ferrieri@edu.unife.it',
-            'password' => 'laura',
-            'role' => 'admin'
-        ]);
+        $role_admin = Role::where('name', 'admin')->first();
+        $role_guest = Role::where('name', 'guest')->first();
 
-        DB::table("users")->insert([
+        $admin = new User();
+        $admin->name= 'Martina';
+        $admin->email= 'martina@gmail.com';
+        $admin->password= bcrypt('martina');
+        $admin->save();
+        $admin->roles()->attach($role_admin);
 
-            'name'=> 'Martina',
-            'email' => 'martina.ceresoli@edu.unife.it',
-            'password' => 'martina',
-            'role' => 'admin'
-        ]);
+        $admin = new User();
+        $admin->name= 'Laura';
+        $admin->email= 'laura@gmail.com';
+        $admin->password= bcrypt('laura');
+        $admin->save();
+        $admin->roles()->attach($role_admin);
 
-        DB::table("users")->insert([
+        $guest = new User();
+        $guest->name= 'guest';
+        $guest->email= 'guest@gmail.com';
+        $guest->password= bcrypt('guest');
+        $guest->save();
+        $guest->roles()->attach($role_guest);
 
-            'name'=> 'Giulia',
-            'email' => 'giulia_guest@gmail.com',
-            'password' => 'giulia',
-            'role' => 'guest'
-        ]);
+        $guest = new User();
+        $guest->name= 'Giulia';
+        $guest->email= 'giulia_guest@gmail.com';
+        $guest->password= bcrypt('guest');
+        $guest->save();
+        $guest->roles()->attach($role_guest);
         
     }
 }
