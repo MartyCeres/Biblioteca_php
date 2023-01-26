@@ -30,6 +30,20 @@ Route::get('/lettori', 'App\Http\Controllers\PageController@getLettoriPage')->na
 
 Route::get('/prestiti', 'App\Http\Controllers\PageController@getPrestitiPage')->name('prestiti');
 
+//Route::post('/iscrizione', 'App\Http\Controllers\UserController@post_iscrizione')->name('iscrizione')->middleware('roles');
+Route::post('/iscrizione',[
+    'uses'=>'App\Http\Controllers\UserController@post_iscrizione',
+    'as'=> 'iscrizione',
+    'middleware' => 'roles',
+    'roles'=> 'admin'
+]);
+
 Route::post('/signin', 'App\Http\Controllers\UserController@post_Login')->name('signin');
 
 Route::post('/logout', 'App\Http\Controllers\UserController@post_Logout')->name('logout');
+
+Route::post('/assegnoRuolo', 'App\Http\Controllers\UserController@post_AssegnoRuolo')->name('assegnoRuolo');
+
+Route::post('/cancellaUtente', 'App\Http\Controllers\UserController@postDeleteUser')->name('cancellaUtente');
+
+Route::get('/gestioneUtenti', 'App\Http\Controllers\PageController@getGestioneUtentiPage')->name('gestioneUtenti');

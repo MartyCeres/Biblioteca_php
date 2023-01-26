@@ -7,6 +7,17 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
+  <!-- JQuery -->
+  <script type="text/javascript" src="{{URL::asset('/mdb/js/jquery-3.4.0.min.js')}}"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="{{URL::asset('/mdb/js/popper.min.js')}}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{{URL::asset('/mdb/js/bootstrap.min.js')}}"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="{{URL::asset('/mdb/js/mdb.min.js')}}"></script>
+  <!-- MySripts -->
+  <script type="text/javascript" src="{{ URL::asset('/js/scripts.js') }}"></script>
+
 </head>
 <body>
     <div class="p-3 bg-success text-white text-center">
@@ -41,6 +52,9 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Profilo</a>
+                        @if(Auth::user()->hasRole('admin'))
+                            <a class="dropdown-item" href="{{ route('gestioneUtenti') }}">Gestione Utenti</a>
+                        @endif
                         @if(Auth::user()->hasRole('admin'))
                             <a class="dropdown-item" href="#">Gestione Prestiti</a>
                         @endif
