@@ -68,41 +68,6 @@
             @yield('content')
         </div>
 
-         <!-- The Modal
-        <div class="modal fade" id="login">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-             Modal Header
-            <div class="modal-header">
-                <h4 class="modal-title">Area riservata</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-             Modal body
-            <div class="modal-body">
-
-                <div class="container mt-3">
-                <h2>Log-in</h2>
-                <form class="form-signin" method="POST" autocomplete="off" action="{{ route('signin') }}">
-                @csrf
-                    <div class="mb-3 mt-3">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Inserisci email" name="email">
-                    </div>
-                    <div class="mb-3">
-                    <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd" placeholder="Inserisci password" name="pwd">
-                    </div>
-                    <button type="submit" class="btn btn-success">Accedi</button>
-                </form>
-                </div>
-
-            </div>
-            </div>
-        </div>
-        </div> -->
-
         <div class="modal fade" id="login">
         <div class="modal-dialog">
             <div class="modal-content">
