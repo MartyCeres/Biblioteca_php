@@ -71,11 +71,11 @@ class UserController extends Controller
     }
 
     public function postEditUser(Request $request){
-        $user = Auth::users();
+        $user = Auth::user();
         $user->name= $request['name'];
         $user->email= $request['email'];
         if($request['password']!=null){
-            if(Hash::check($request->get('password'), Auth::users()->password)){
+            if(Hash::check($request->get('password'), Auth::user()->password)){
                 if(strcmp($request['password'], $request['newpass'])!=0){ 
                     if($request['newpass']==$request['cnewpass']){
                         $user->password= bcrypt($request['newpass']);

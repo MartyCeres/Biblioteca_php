@@ -40,7 +40,7 @@
                         Benvenuto {{ Auth::user()->name }}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Profilo</a>
+                        <a class="dropdown-item" href="{{ route('profilo')}}">Profilo</a>
                         @if(Auth::user()->hasRole('admin'))
                             <a class="dropdown-item" href="#">Gestione Prestiti</a>
                         @endif
@@ -80,7 +80,7 @@
                 <div class="modal-body">
                     <div class="container mt-3">
                     <h3>Log-in</h3>
-                    <form class="form-signin" method="POST" autocomplete="off" action="{{ route('signin') }}">
+                    <form class="form-signin" method="POST" autocomplete="off" action="{{ route('login') }}">
                     @csrf
                     <div class="mb-3 mt-3">
                         <label for="inputEmail">Email:</label>

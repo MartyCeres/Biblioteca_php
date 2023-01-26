@@ -30,6 +30,9 @@ Route::get('/lettori', 'App\Http\Controllers\PageController@getLettoriPage')->na
 
 Route::get('/prestiti', 'App\Http\Controllers\PageController@getPrestitiPage')->name('prestiti');
 
-Route::post('/signin', 'App\Http\Controllers\UserController@post_Login')->name('signin');
+Route::post('/login', 'App\Http\Controllers\UserController@post_Login')->name('login');
 
 Route::post('/logout', 'App\Http\Controllers\UserController@post_Logout')->name('logout');
+
+Route::post('/modificaUtente', 'App\Http\Controllers\UserController@postEditUser')->name('modificaUtente');
+Route::get('/profilo', 'App\Http\Controllers\PageController@getProfiloPage')->name('profilo');

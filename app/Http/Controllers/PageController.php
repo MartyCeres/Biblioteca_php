@@ -35,4 +35,8 @@ class PageController extends Controller
             ->get();
         return view('/pages/prestiti',compact('prestiti'));
     }
+
+    public function getProfiloPage(){
+        return view('/pages/profilo');
+    }
 }
