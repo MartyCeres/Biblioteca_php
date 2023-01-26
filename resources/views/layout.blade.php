@@ -47,12 +47,11 @@
                         <a class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
                     </ul>
-                </li> 
+                </li>
                 @endif
                 @if(old('error'))
                 <b class="text-danger">Errore di autenticazione!</b>
-                @endif 
-
+                @endif
 
                 @if(!Auth::check())
                 <li><a>
@@ -60,8 +59,6 @@
                 </a></li>
                 @endif
 
-               
-                
                 </ul>
             </div>
         </nav>
@@ -69,22 +66,22 @@
 
         <div class="container">
             @yield('content')
-         </div>
+        </div>
 
-         <!-- The Modal 
+         <!-- The Modal
         <div class="modal fade" id="login">
         <div class="modal-dialog">
             <div class="modal-content">
 
-             Modal Header 
+             Modal Header
             <div class="modal-header">
                 <h4 class="modal-title">Area riservata</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
-             Modal body 
+             Modal body
             <div class="modal-body">
-                
+
                 <div class="container mt-3">
                 <h2>Log-in</h2>
                 <form class="form-signin" method="POST" autocomplete="off" action="{{ route('signin') }}">
@@ -106,34 +103,35 @@
         </div>
         </div> -->
 
-        <div class="modal" role="dialog" id="login" tabindex="-1">
-        <div class="container">
-            <div class="row">
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                <div class="card card-signin my-5">
-                <div class="card-body">
-                    <h5 class="card-title text-center fadeIn first">Sign In
-                        <button type="button" name="button" class="close" data-dismiss="modal" aria-hidden="true">
-                            &times;
-                        </button>
-                    </h5>
+        <div class="modal fade" id="login">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!--Modal Header-->
+                <div class="modal-header">
+                        <h5 class="modal-title">Area riservata</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!--Modal Body-->
+                <div class="modal-body">
+                    <div class="container mt-3">
+                    <h3>Log-in</h3>
                     <form class="form-signin" method="POST" autocomplete="off" action="{{ route('signin') }}">
                     @csrf
-                    <div class="form-label-group fadeIn second">
-                        <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
-                        <label for="inputEmail">Email address</label>
+                    <div class="mb-3 mt-3">
+                        <label for="inputEmail">Email:</label>
+                        <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Inserisci Email" required autofocus>
                     </div>
-        
-                    <div class="form-label-group fadeIn third">
-                        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
-                        <label for="inputPassword">Password</label>
+                    <div class="mb-3">
+                        <label for="inputPassword">Password:</label>
+                        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Inserisci Password" required>
                     </div>
-                    <button class="btn btn-lg btn-color btn-block text-uppercase fadeIn fourth" type="submit">Sign in</button>
+                        <button class="btn btn-success" type="submit">Sign in</button>
                     </form>
-                </div>
+                    <br>
+                    </div>
                 </div>
             </div>
-            </div>
+        </div>
         </div>
 </body>
 </html>
