@@ -53,7 +53,7 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Profilo</a>
                         @if(Auth::user()->hasRole('admin'))
-                            <a class="dropdown-item" href="{{ route('gestioneUtenti') }}">Gestione Utenti</a>
+                            <a class="dropdown-item" href="{{ route('gestioneUtenti') }}">Visualizza Utenti</a>
                         @endif
                         @if(Auth::user()->hasRole('admin'))
                             <a class="dropdown-item" href="#">Gestione Prestiti</a>
@@ -112,5 +112,8 @@
             </div>
         </div>
         </div>
+        @stack('scripts')
+        @yield('javascript')
 </body>
+
 </html>

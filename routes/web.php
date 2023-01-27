@@ -42,8 +42,26 @@ Route::post('/signin', 'App\Http\Controllers\UserController@post_Login')->name('
 
 Route::post('/logout', 'App\Http\Controllers\UserController@post_Logout')->name('logout');
 
-Route::post('/assegnoRuolo', 'App\Http\Controllers\UserController@post_AssegnoRuolo')->name('assegnoRuolo');
+//Route::post('/assegnoRuolo', 'App\Http\Controllers\UserController@post_AssegnoRuolo')->name('assegnoRuolo');
+Route::post('/assegnoRuolo',[
+    'uses'=>'App\Http\Controllers\UserController@post_AssegnoRuolo',
+    'as'=> 'assegnoRuolo',
+    'middleware' => 'roles',
+    'roles'=> 'admin'
+]);
 
-Route::post('/cancellaUtente', 'App\Http\Controllers\UserController@postDeleteUser')->name('cancellaUtente');
+//Route::post('/cancellaUtente', 'App\Http\Controllers\UserController@postDeleteUser')->name('cancellaUtente');
+Route::post('/cancellaUtente',[
+    'uses'=>'App\Http\Controllers\UserController@postDeleteUser',
+    'as'=> 'cancellaUtente',
+    'middleware' => 'roles',
+    'roles'=> 'admin'
+]);
 
-Route::get('/gestioneUtenti', 'App\Http\Controllers\PageController@getGestioneUtentiPage')->name('gestioneUtenti');
+//Route::get('/gestioneUtenti', 'App\Http\Controllers\PageController@getGestioneUtentiPage')->name('gestioneUtenti');
+Route::get('/gestioneUtenti', [
+    'uses'=>'App\Http\Controllers\PageController@getGestioneUtentiPage',
+    'as'=>'gestioneUtenti',
+    'middleware' => 'roles',
+    'roles'=> 'admin'
+]);
