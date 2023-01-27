@@ -36,3 +36,4 @@ Route::post('/logout', 'App\Http\Controllers\UserController@post_Logout')->name(
 
 Route::post('/modificaUtente', 'App\Http\Controllers\UserController@postEditUser')->name('modificaUtente');
 Route::get('/profilo', 'App\Http\Controllers\PageController@getProfiloPage')->name('profilo');
+
