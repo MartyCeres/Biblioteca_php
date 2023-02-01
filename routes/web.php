@@ -72,3 +72,6 @@ Route::get('/gestioneUtenti', [
     'middleware' => 'roles',
     'roles'=> 'admin'
 ]);
+
+//---------------- gestionePrestiti -----------------
+Route::get('/gestionePrestiti', 'App\Http\Controllers\PageController@getPrestitiPage')->name('gestionePrestiti');

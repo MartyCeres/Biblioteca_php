@@ -43,4 +43,8 @@ class PageController extends Controller
         $users = User::all()->except('password');
         return view('/pages/gestioneUtenti', compact('users'));
     }
+
+    public function getGestionePrestitiPage(){
+        return view('/pages/gestionePrestiti');
+    }
 }

@@ -56,7 +56,7 @@
                             <a class="dropdown-item" href="{{ route('gestioneUtenti') }}">Visualizza Utenti</a>
                         @endif
                         @if(Auth::user()->hasRole('admin'))
-                            <a class="dropdown-item" href="#">Gestione Prestiti</a>
+                            <a class="dropdown-item" href="{{ route('gestionePrestiti') }}">Gestione Prestiti</a>
                         @endif
                         <a class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
