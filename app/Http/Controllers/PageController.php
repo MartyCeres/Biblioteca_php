@@ -6,6 +6,7 @@ use App\Models\Lettore;
 use App\Models\Libro;
 use App\Models\Autore;
 use App\Models\Editore;
+use App\Models\User;
 use DB;
 use Illuminate\Http\Request;
 
@@ -35,8 +36,11 @@ class PageController extends Controller
             ->get();
         return view('/pages/prestiti',compact('prestiti'));
     }
-
     public function getProfiloPage(){
         return view('/pages/profilo');
+    }
+    public function getGestioneUtentiPage(){
+        $users = User::all()->except('password');
+        return view('/pages/gestioneUtenti', compact('users'));
     }
 }
