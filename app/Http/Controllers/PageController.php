@@ -45,6 +45,11 @@ class PageController extends Controller
     }
 
     public function getGestionePrestitiPage(){
-        return view('/pages/gestionePrestiti');
+        $prestiti = DB::table('prestiti')
+        ->join('libri', 'libri.id', '=', 'prestiti.libro_id')
+        ->join('lettori', 'lettori.id', '=', 'prestiti.lettore_id')
+        ->select('prestiti.*', 'libri.titolo', 'lettori.cognome', 'lettori.nome')
+        ->get();
+    return view('/pages/gestionePrestiti',compact('prestiti'));
     }
 }
