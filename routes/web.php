@@ -35,6 +35,7 @@ Route::post('/login', 'App\Http\Controllers\UserController@post_Login')->name('l
 Route::post('/logout', 'App\Http\Controllers\UserController@post_Logout')->name('logout');
 
 Route::post('/modificaUtente', 'App\Http\Controllers\UserController@postEditUser')->name('modificaUtente');
+
 Route::get('/profilo', 'App\Http\Controllers\PageController@getProfiloPage')->name('profilo');
 
 //Route::post('/iscrizione', 'App\Http\Controllers\UserController@post_iscrizione')->name('iscrizione')->middleware('roles');
@@ -65,13 +66,14 @@ Route::post('/cancellaUtente',[
     'roles'=> 'admin'
 ]);
 
-//Route::get('/gestioneUtenti', 'App\Http\Controllers\PageController@getGestioneUtentiPage')->name('gestioneUtenti');
-Route::get('/gestioneUtenti', [
+Route::get('/gestioneUtenti', 'App\Http\Controllers\PageController@getGestioneUtentiPage')->name('gestioneUtenti');
+/*Route::get('/gestioneUtenti', [
     'uses'=>'App\Http\Controllers\PageController@getGestioneUtentiPage',
     'as'=>'gestioneUtenti',
     'middleware' => 'roles',
     'roles'=> 'admin'
-]);
+]);*/
+
 
 //---------------- gestionePrestiti -----------------
 Route::get('/gestionePrestiti', 'App\Http\Controllers\PageController@getPrestitiPage')->name('gestionePrestiti');
