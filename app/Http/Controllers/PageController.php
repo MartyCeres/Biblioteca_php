@@ -50,6 +50,9 @@ class PageController extends Controller
         ->join('lettori', 'lettori.id', '=', 'prestiti.lettore_id')
         ->select('prestiti.*', 'libri.titolo', 'lettori.cognome', 'lettori.nome')
         ->get();
-    return view('/pages/gestionePrestiti',compact('prestiti'));
+
+        $libri = Libro::all();
+        $lettori = Lettore::all('lettori.nome', 'lettori.cognome');
+        return view('/pages/gestionePrestiti',compact(['prestiti', 'libri', 'lettori']));
     }
 }

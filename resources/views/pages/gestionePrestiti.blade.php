@@ -41,17 +41,26 @@
     <div class="col-sm-4">
     <h3>Registra Nuovo Prestito</h3>
         <h6>Titolo Libro:</h6>
-        <input id="Rtitolo" type="text" name="titolo" class="form-control align-left col-4" placeholder="Titolo" required>
+        <select id="Rtitolo" name="titolo" class="form-select form-select-md col-4" required>
+        @foreach ($libri as $libro)
+            <option value="{{ $libro->libro_id }}">{{ $libro->titolo}}</option>
+        @endforeach
+        </select>
         <br>
         <h6>Nome:</h6>
         <div class="form-inline">
-            <input id="Rnome" type="text" name="nome" class="form-control align-left col-2" placeholder="Nome" required>
-            <br>
-            <input id="Rcognome" type="text" name="cognome" class="form-control align-left col-1 ml-2" placeholder="Cognome" required>
+            <select id="Rnome" name="nome" class="form-select form-select-md col-4" required>
+            @foreach ($lettori as $lettore)
+            <option value="{{ $lettore->lettore_id }}">{{ $lettore->nome}}, {{ $lettore->cognome}}</option>
+            @endforeach
+            </select>
         </div>
         <br>
         <button class="btn btn-block text-uppercase btn-outline-success float-end col-4" onclick="regStr()">Registra</button>
-    </div>
+    </div> 
+    <br>
+    <br>
+    <br>
     </div>
 </div>
 
@@ -59,11 +68,11 @@
     function regStr(){
         var titolo= $('#Rtitolo').val();
         var nome= $('#Rnome').val();
-        var cognome= $('#Rcognome').val();
+        
         $.ajax({
             url:"{{ route('regStr') }}",
             method: "POST",
-            data: {_token: "{{ csrf_token() }}",  titolo:titolo, nome:nome, cognome:cognome},
+            data: {_token: "{{ csrf_token() }}",  libro_id:titolo, lettore_id:nome},
             success: function(){
                 titolo.reload();
             },

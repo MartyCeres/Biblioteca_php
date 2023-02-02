@@ -77,7 +77,7 @@ Route::get('/gestioneUtenti', [
 Route::get('/gestionePrestiti', 'App\Http\Controllers\PageController@getGestionePrestitiPage')->name('gestionePrestiti');
 
 Route::post('/regStr',[
-    'uses'=>'App\Http\Controllers\PrestitoController@@postRegStr',
+    'uses'=>'App\Http\Controllers\PrestitoController@postRegStr',
     'as'=> 'regStr',
     'middleware' => 'roles',
     'roles'=> 'admin'
