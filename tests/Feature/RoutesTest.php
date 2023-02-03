@@ -37,12 +37,6 @@ class RoutesTest extends TestCase
 
         $response->assertStatus(200);
     }
-    /*public function test_profilo()
-    {
-        $response = $this->get('/profilo');
-
-        $response->assertStatus(200);
-    }*/
     public function test_gestioneUtenti()
     {
         $response = $this->get('/gestioneUtenti');
@@ -52,6 +46,12 @@ class RoutesTest extends TestCase
     public function test_gestionePrestiti()
     {
         $response = $this->get('/gestionePrestiti');
+
+        $response->assertStatus(200);
+    }
+    public function test_posizioneLibri()
+    {
+        $response = $this->get('/posizionilibri');
 
         $response->assertStatus(200);
     }
