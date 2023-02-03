@@ -85,3 +85,5 @@ Route::post('/regStr',[
 ]);
 
 Route::get('/addgestionePrestiti', 'App\Http\Controllers\PrestitoController@updateOrCreate')->name('addgestionePrestiti');
+
+Route::get('/posizionilibri', 'App\Http\Controllers\PageController@getPosizioniLibriPage')->name('posizionilibri');
