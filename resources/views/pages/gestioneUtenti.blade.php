@@ -28,7 +28,7 @@
         <tbody>
         @foreach ($users as $user)
             @if($user->id != Auth::user()->id)
-            <tr id="{{ $user->id }}">
+                <tr id="{{ $user->id }}">
                     <th>{{ $user->id }}</th>
                     <th>{{  $user->name  }}</th>
                     <th>{{  $user->email  }}</th>

@@ -14,14 +14,6 @@ use App\Http\Controllers\Controller;
 |
 */
 
-/* Route::get('/', function () {
-    return view('welcome');
-}); */
-
-/*Route::get('/', function(){
-    return view('layout');
-}); */
-
 Route::get('/', 'App\Http\Controllers\PageController@getHomePage')->name('home');
 
 Route::get('/libri', 'App\Http\Controllers\PageController@getLibriPage')->name('libri');
@@ -38,51 +30,9 @@ Route::post('/modificaUtente', 'App\Http\Controllers\UserController@postEditUser
 
 Route::get('/profilo', 'App\Http\Controllers\PageController@getProfiloPage')->name('profilo');
 
-//Route::post('/iscrizione', 'App\Http\Controllers\UserController@post_iscrizione')->name('iscrizione')->middleware('roles');
-Route::post('/iscrizione',[
-    'uses'=>'App\Http\Controllers\UserController@post_iscrizione',
-    'as'=> 'iscrizione',
-    'middleware' => 'roles',
-    'roles'=> 'admin'
-]);
-
-//Route::post('/signin', 'App\Http\Controllers\UserController@post_Login')->name('signin');
-
-//Route::post('/logout', 'App\Http\Controllers\UserController@post_Logout')->name('logout');
-
-//Route::post('/assegnoRuolo', 'App\Http\Controllers\UserController@post_AssegnoRuolo')->name('assegnoRuolo');
-Route::post('/assegnoRuolo',[
-    'uses'=>'App\Http\Controllers\UserController@post_AssegnoRuolo',
-    'as'=> 'assegnoRuolo',
-    'middleware' => 'roles',
-    'roles'=> 'admin'
-]);
-
-//Route::post('/cancellaUtente', 'App\Http\Controllers\UserController@postDeleteUser')->name('cancellaUtente');
-Route::post('/cancellaUtente',[
-    'uses'=>'App\Http\Controllers\UserController@postDeleteUser',
-    'as'=> 'cancellaUtente',
-    'middleware' => 'roles',
-    'roles'=> 'admin'
-]);
-
 Route::get('/gestioneUtenti', 'App\Http\Controllers\PageController@getGestioneUtentiPage')->name('gestioneUtenti');
-/*Route::get('/gestioneUtenti', [
-    'uses'=>'App\Http\Controllers\PageController@getGestioneUtentiPage',
-    'as'=>'gestioneUtenti',
-    'middleware' => 'roles',
-    'roles'=> 'admin'
-]);*/
 
-//---------------- gestionePrestiti -----------------
 Route::get('/gestionePrestiti', 'App\Http\Controllers\PageController@getGestionePrestitiPage')->name('gestionePrestiti');
-
-Route::post('/regStr',[
-    'uses'=>'App\Http\Controllers\PrestitoController@postRegStr',
-    'as'=> 'regStr',
-    'middleware' => 'roles',
-    'roles'=> 'admin'
-]);
 
 Route::get('/addgestionePrestiti', 'App\Http\Controllers\PrestitoController@updateOrCreate')->name('addgestionePrestiti');
 

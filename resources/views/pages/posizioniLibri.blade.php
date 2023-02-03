@@ -36,8 +36,8 @@
                     <td>{{  $libro->anome  }}</td>
                     <td>{{  $libro->cognome  }}</td>
                     <td>{{  $libro->genere  }}</td>
-                    <td>{{  $libro->zona  }}</td>
-                    <td>{{  $libro->scaffale  }}</td>
+                    <td class="fw-bold">{{  $libro->zona  }}</td>
+                    <td class="fw-bold">{{  $libro->scaffale  }}</td>
                 </tr>
             @endforeach
         </tbody>
