@@ -18,29 +18,29 @@
 
 <div class="table-wrapper-scroll-y my-custom-scrollbar-total">
     <br>
-        <table id="roleTab" class="table table-hover table-responsive-md text-center">
-            <thead class="table-success">
+    <table id="roleTab" class="table table-hover table-responsive-lg text-center">
+        <thead class="table-success">
+            <tr>
+                <th scope="col">Titolo</th>
+                <th scope="col">Nome Autore</th>
+                <th scope="col">Cognome Autore</th>
+                <th scope="col">Editore</th>
+                <th scope="col">Anno</th>
+                <th scope="col">Genere</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($libri as $libro)
                 <tr>
-                    <th scope="col">Titolo</th>
-                    <th scope="col">Nome Autore</th>
-                    <th scope="col">Cognome Autore</th>
-                    <th scope="col">Editore</th>
-                    <th scope="col">Anno</th>
-                    <th scope="col">Genere</th>
+                    <td>{{  $libro->titolo  }}</td>
+                    <td>{{  $libro->anome  }}</td>
+                    <td>{{  $libro->cognome  }}</td>
+                    <td>{{  $libro->nome  }}</td>
+                    <td>{{  $libro->anno  }}</td>
+                    <td>{{  $libro->genere  }}</td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach ($libri as $libro)
-                    <tr>
-                        <td>{{  $libro->titolo  }}</td>
-                        <td>{{  $libro->anome  }}</td>
-                        <td>{{  $libro->cognome  }}</td>
-                        <td>{{  $libro->nome  }}</td>
-                        <td>{{  $libro->anno  }}</td>
-                        <td>{{  $libro->genere  }}</td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
+            @endforeach
+        </tbody>
+    </table>
+</div>
 @endsection
