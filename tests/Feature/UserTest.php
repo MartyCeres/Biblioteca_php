@@ -19,20 +19,12 @@ class UserTest extends TestCase
 
         $response->assertStatus(200);
     }
-    /*public function testHasName()
-    {
-        $user = factory(User::class)->make([
-            'name' => 'Giulia'
-        ]);
-
-        $verdetto = $user->select('name','Giulia');
-        $this->assertTrue($verdetto);
-    }*/
-    public function test_NonAggiungeUtente()
+    
+    public function test_NonAggiungePrestito()
     {
         $response = $this->withHeaders([
             'X-Header' => 'Value',
-        ])->json('POST', '/aggiuntaUtenti', ['name' => 'guest']);
+        ])->json('POST', '/aggiuntaPrestito', ['name' => 'guest']);
 
         $response->assertStatus(404);
         $response->assertNotFound(); // analogo
