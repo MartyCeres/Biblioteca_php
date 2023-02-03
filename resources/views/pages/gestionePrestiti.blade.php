@@ -8,35 +8,59 @@
 <div class="container row">
     <div class="col-sm-6 text-dark">
         <br>
-        <h1>Lista Prestiti</h1>
-    </div>
-    <div class="col-sm-6">
-        <img src="/images/prestiti1.jpg" class="rounded float-end" width="300" height="200">
+        <h1>Gestione Prestiti</h1>
     </div>
     </div>
 </div>
 
-<div class="table-wrapper-scroll-y my-custom-scrollbar-total">
-    <br>
-    <table id="roleTab" class="table table-hover table-responsive-md text-center">
-        <thead class="table-success">
-            <tr>
-                <th scope="col">N°</th>
-                <th scope="col">Titolo libro</th>
-                <th scope="col">Nome Lettore</th>
-                <th scope="col">Cognome Lettore</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($prestiti as $prestito)
-                <tr>
-                    <td>{{  $prestito->id  }}</td>
-                    <td>{{  $prestito->titolo  }}</td>
-                    <td>{{  $prestito->nome  }}</td>
-                    <td>{{  $prestito->cognome  }}</td>
-                </tr>
+<div class="container-fluid row">
+    <div class="row">
+    <div class="col-sm-8">
+        <br>
+            <table id="roleTab" class="table table-hover table-responsive-md text-center">
+                <thead class="table-success">
+                    <tr>
+                        <th scope="col">N°</th>
+                        <th scope="col">Titolo libro</th>
+                        <th scope="col">Nome Lettore</th>
+                        <th scope="col">Cognome Lettore</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($prestiti as $prestito)
+                        <tr>
+                            <td>{{  $prestito->id  }}</td>
+                            <td>{{  $prestito->titolo  }}</td>
+                            <td>{{  $prestito->nome  }}</td>
+                            <td>{{  $prestito->cognome  }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>       
+    </div>
+    <div class="col-sm-4">
+    <h3>Registra Nuovo Prestito</h3>
+        <h6>Titolo Libro:</h6>
+        <select id="Rtitolo" name="titolo" class="form-select form-select-md col-4" required>
+        @foreach ($libri as $libro)
+            <option value="{{ $libro->libro_id }}">{{ $libro->titolo}}</option>
+        @endforeach
+        </select>
+        <br>
+        <h6>Nome:</h6>
+        <div class="form-inline">
+            <select id="Rnome" name="nome" class="form-select form-select-md col-4" required>
+            @foreach ($lettori as $lettore)
+            <option value="{{ $lettore->lettore_id }}">{{ $lettore->nome}}, {{ $lettore->cognome}}</option>
             @endforeach
-        </tbody>
-    </table>
+            </select>
+            <br>
+            <a href="{{ route('addgestionePrestiti') }}" class="btn btn-success"> annulla </a>
+        </div>
+    </div> 
+    <br>
+    <br>
+    <br>
+    </div>
 </div>
 @endsection

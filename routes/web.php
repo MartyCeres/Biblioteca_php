@@ -75,6 +75,13 @@ Route::get('/gestioneUtenti', 'App\Http\Controllers\PageController@getGestioneUt
 ]);*/
 
 //---------------- gestionePrestiti -----------------
-Route::get('/gestionePrestiti', 'App\Http\Controllers\PageController@getPrestitiPage')->name('gestionePrestiti');
+Route::get('/gestionePrestiti', 'App\Http\Controllers\PageController@getGestionePrestitiPage')->name('gestionePrestiti');
 
-Route::get('/posizionilibri', 'App\Http\Controllers\PageController@getPosizioniLibriPage')->name('posizionilibri');
+Route::post('/regStr',[
+    'uses'=>'App\Http\Controllers\PrestitoController@postRegStr',
+    'as'=> 'regStr',
+    'middleware' => 'roles',
+    'roles'=> 'admin'
+]);
+
+Route::get('/addgestionePrestiti', 'App\Http\Controllers\PrestitoController@updateOrCreate')->name('addgestionePrestiti');
