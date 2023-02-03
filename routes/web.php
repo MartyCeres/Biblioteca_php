@@ -82,3 +82,5 @@ Route::post('/regStr',[
     'middleware' => 'roles',
     'roles'=> 'admin'
 ]);
+
+Route::get('/addgestionePrestiti', 'App\Http\Controllers\PrestitoController@updateOrCreate')->name('addgestionePrestiti');

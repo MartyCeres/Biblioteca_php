@@ -54,37 +54,13 @@
             <option value="{{ $lettore->lettore_id }}">{{ $lettore->nome}}, {{ $lettore->cognome}}</option>
             @endforeach
             </select>
+            <br>
+            <a href="{{ route('addgestionePrestiti') }}" class="btn btn-success"> annulla </a>
         </div>
-        <br>
-        <button class="btn btn-block text-uppercase btn-outline-success float-end col-4" onclick="regStr()">Registra</button>
     </div> 
     <br>
     <br>
     <br>
     </div>
 </div>
-
-<script>
-    function regStr(){
-        var titolo= $('#Rtitolo').val();
-        var nome= $('#Rnome').val();
-        
-        $.ajax({
-            url:"{{ route('regStr') }}",
-            method: "POST",
-            data: {_token: "{{ csrf_token() }}",  libro_id:titolo, lettore_id:nome},
-            success: function(){
-                titolo.reload();
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                console.log('jqXHR:');
-                console.log(jqXHR);
-                console.log('textStatus:');
-                console.log(textStatus);
-                console.log('errorThrown:');
-                console.log(errorThrown);
-            },
-        })
-    }
-</script>
 @endsection
