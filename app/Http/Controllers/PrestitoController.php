@@ -13,39 +13,7 @@ use Hash;
 
 class PrestitoController extends Controller
 {   
-    public function create()
-    {
-        return view('create');
-    }
-    public function postRegStr(Request $request){
-        $request->validate([
-            'titolo' => 'required',
-            'nome' => 'required',
-        ]);
-
-        $titolo = $request['titolo'];
-        $nome = $request['nome'];
-        
-        
-        $prestito = new Prestito();
-        $prestito->libro_id= $titolo;
-        $prestito->lettore_id= $nome;
-        $prestito->save();
-        $regDone=1;
-        return redirect()->back()->withInput(array('regDone' => $regDone));
-
-        /*$storeData = $request->validate([
-            'titolo' => 'required',
-            'nome' => 'required',
-            'cognome' => 'required',
-        ]);
-        $prestito = Prestito::create($storeData);
-        $regDone=1;
-        return redirect()->back()->withInput(array('regDone' => $regDone));*/
-    }
-
-
-    public function updateOrCreate(Request $request){
+    public function updateOrCreate(){
         
         $prestiti = DB::table('prestiti')
             ->upsert([
@@ -53,6 +21,12 @@ class PrestitoController extends Controller
                 'lettore_id'=>Lettore::where('cognome', 'Neri')->value('id')]
             ], ['id'], ['libro_id', 'lettore_id']);
 
+        return redirect()->route('gestionePrestiti');
+    }
+
+    public function destroy(){
+          
+        $prestiti = Prestito::where('id', '4')->firstorfail()->delete();
         return redirect()->route('gestionePrestiti');
     }
 }

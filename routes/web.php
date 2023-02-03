@@ -36,4 +36,6 @@ Route::get('/gestionePrestiti', 'App\Http\Controllers\PageController@getGestione
 
 Route::get('/addgestionePrestiti', 'App\Http\Controllers\PrestitoController@updateOrCreate')->name('addgestionePrestiti');
 
+Route::get('/cancgestionePrestiti', 'App\Http\Controllers\PrestitoController@destroy')->name('cancgestionePrestiti');
+
 Route::get('/posizionilibri', 'App\Http\Controllers\PageController@getPosizioniLibriPage')->name('posizionilibri');
