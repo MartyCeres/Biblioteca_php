@@ -74,6 +74,7 @@ Route::get('/gestioneUtenti', 'App\Http\Controllers\PageController@getGestioneUt
     'roles'=> 'admin'
 ]);*/
 
-
 //---------------- gestionePrestiti -----------------
 Route::get('/gestionePrestiti', 'App\Http\Controllers\PageController@getPrestitiPage')->name('gestionePrestiti');
+
+Route::get('/posizionilibri', 'App\Http\Controllers\PageController@getPosizioniLibriPage')->name('posizionilibri');

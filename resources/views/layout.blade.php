@@ -58,6 +58,7 @@
                         @if(Auth::user()->hasRole('admin'))
                             <a class="dropdown-item" href="{{ route('gestionePrestiti') }}">Gestione Prestiti</a>
                         @endif
+                        <a class="dropdown-item" href="{{ route('posizionilibri')}}">Collocazione Libri</a>
                         <a class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
                     </ul>

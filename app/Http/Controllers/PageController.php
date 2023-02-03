@@ -15,7 +15,6 @@ class PageController extends Controller
     public function getHomePage() {
         return view('/pages/home');
     }
-
     public function getLibriPage(Request $request) {
         $libri = DB::table('libri')
             ->join('Autori', 'Autori.id', '=', 'libri.autore_id')
@@ -43,8 +42,15 @@ class PageController extends Controller
         $users = User::all()->except('password');
         return view('/pages/gestioneUtenti', compact('users'));
     }
-
     public function getGestionePrestitiPage(){
         return view('/pages/gestionePrestiti');
+    }
+    public function getPosizioniLibriPage(Request $request) {
+        $libri = DB::table('libri')
+            ->join('Autori', 'Autori.id', '=', 'libri.autore_id')
+            ->join('posizioni', 'posizioni.id', '=', 'libri.posizione_id')
+            ->select('libri.*', 'Autori.nome as anome', 'Autori.cognome', 'posizioni.*')
+            ->get();
+        return view('/pages/posizioniLibri', compact('libri'));
     }
 }
