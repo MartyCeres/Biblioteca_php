@@ -38,7 +38,8 @@
                 </tbody>
             </table>       
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4 border border-secondary rounded">
+        <br>
     <h3>Registra Nuovo Prestito</h3>
         <h6>Titolo Libro:</h6>
         <select id="Rtitolo" name="titolo" class="form-select form-select-md col-4" required>
@@ -55,7 +56,10 @@
             @endforeach
             </select>
             <br>
-            <a href="{{ route('addgestionePrestiti') }}" class="btn btn-success"> annulla </a>
+            <div align="right">
+                <a href="{{ route('addgestionePrestiti') }}" class="btn btn-success col-4"> Registra </a>
+            </div>
+            <br>
         </div>
     </div> 
     <br>
